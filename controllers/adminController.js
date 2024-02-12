@@ -1,11 +1,13 @@
 
-
-const bcrypt = require('bcrypt');
-const admin = require('../models/adminModel');
-const Movie = require('../models/movieModel')
 const mongoose = require('mongoose');
+const Movie = require('../models/movieModel')
 const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
+const admin = require('../models/adminModel');
 require('dotenv').config()
+
+
+
 
 
 const addAdmin = async (req, res, next) => {
