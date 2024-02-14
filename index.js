@@ -31,7 +31,7 @@ const bookingsRouter = require('./routes/bookingsRouter');
 
 const port = process.env.PORT || 3000;
 
-// Use the user routess
+// Use the user routesss
 app.use('/user',userRoute);
 app.use('/admin',adminRouter);
 app.use('/movie',movieRouter)
