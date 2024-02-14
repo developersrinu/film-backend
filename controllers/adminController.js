@@ -26,8 +26,8 @@ const addAdmin = async (req, res, next) => {
             return res.status(409).json({ message: 'Admin with this email already exists' });
         }
 
-        // Hash the user's password before saving it to the database
-        const hashedPassword = await bcrypt.hash(password, 12); // 12 is the salt rounds
+        
+        const hashedPassword = await bcrypt.hash(password, 12); 
         const newAdmin = new admin({
             email,
             password: hashedPassword,
@@ -36,10 +36,10 @@ const addAdmin = async (req, res, next) => {
         // Save the new admin to the database
         await newAdmin.save();
 
-        // Return the newly created admin in the response
+        
         return res.status(201).json({ message:"admin registration successfull",admin: newAdmin });
     } catch (error) {
-        // Handle errors during signup
+       
         console.error('Error during signup:', error);
         next(error);
     }
